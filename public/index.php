@@ -4,9 +4,9 @@ require '../core/connect.php';
 require_once '../vendor/autoload.php';
 require 'valid.php';
 
-if ($_POST) {
-    print_r($_POST);
-}
+// if ($_POST) {
+//     print_r($_POST);
+// }
 
 ?>
 
