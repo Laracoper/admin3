@@ -23,11 +23,12 @@ print_r($users);
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
+
     $sql = "delete from users where id = ?";
     $res = $pdo->prepare($sql);
     $res->execute([$id]);
-    header('location:acadmin.php');
-    
+    header('location: /acadmin.php',1,301);
+
 }
 
 ?>
@@ -65,7 +66,7 @@ if (isset($_GET['id'])) {
                     <tr>
                         <th><?= $user['id'] ?></th>
                         <td><?= $user['created_at'] ?></td>
-                        <td><?= $user['phone'] ?></td>
+                        <td><a href="tel:<?= $user['phone'] ?>"><?= $user['phone'] ?></a></td>
                         <td><?= $user['name'] ?></td>
                         <td><a class="btn btn-danger" href="?id=<?= $user['id'] ?>"> &#x2715</a></td>
                     </tr>
